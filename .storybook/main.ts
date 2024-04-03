@@ -73,12 +73,10 @@ const config: StorybookConfig = {
 		return config;
 	},
 	framework: {
-		name: '@storybook/react-webpack5',
+		name: '@storybook/nextjs',
 		options: {
-			builder: {
-				useSWC: true,
-			},
-		},
+          builder: {}
+        },
 	},
 	swc: () => ({
 		jsc: {

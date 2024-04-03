@@ -20,6 +20,10 @@
 	width: 616px;
 	height: auto;
 	min-height: 100%;
+
+	> * + * {
+		margin-top: 45px; // adjust the space between menus
+	}
 	padding: 50px 31px;
 	background-color: #ffffff;
 	border-right: 1px solid #000000;
