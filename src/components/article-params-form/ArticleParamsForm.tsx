@@ -1,7 +1,7 @@
 import { ArrowButton } from 'components/arrow-button';
 import { Button } from 'components/button';
 import { Text } from 'components/text';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from './ArticleParamsForm.module.scss';
 import { useSidebarClose } from './hooks/useSidebarClose';
 import {
@@ -12,9 +12,12 @@ import {
 	contentWidthArr,
 	fontSizeOptions,
 	OptionType,
+	ArticleStateType
 } from '../../constants/articleProps';
 import { Select } from '../select';
 import { RadioGroup } from '../radio-group';
+import clsx from 'clsx';
+import { Separator } from '../separator';
 
 type TArticleParamsForm = {
 	onStateUpdate: (newState: typeof defaultArticleState) => void;
@@ -31,15 +34,9 @@ export const ArticleParamsForm = ({ onStateUpdate }: TArticleParamsForm) => {
 
 	useSidebarClose({
 		isOpened,
-		onClose: toggleSidebar,
+		onClose: () => setIsOpened(false),
 		rootRef: formRef,
 	});
-
-	useEffect(() => {
-		if (formRef.current) {
-			formRef.current.classList.toggle(styles.container_open, isOpened);
-		}
-	}, [isOpened]);
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -51,7 +48,7 @@ export const ArticleParamsForm = ({ onStateUpdate }: TArticleParamsForm) => {
 		onStateUpdate(defaultArticleState);
 	};
 
-	const handleChange = (name: keyof typeof formState, option: OptionType) => {
+	const handleChange = (name: keyof ArticleStateType, option: OptionType) => {
 		setFormState({
 			...formState,
 			[name]: option,
@@ -61,7 +58,7 @@ export const ArticleParamsForm = ({ onStateUpdate }: TArticleParamsForm) => {
 	return (
 		<>
 			<ArrowButton isOpened={isOpened} handleClick={toggleSidebar} />
-			<aside className={styles.container} ref={formRef}>
+			<aside className={clsx(styles.container, isOpened && styles.container_open)} ref={formRef} >
 				<form
 					className={styles.form}
 					onSubmit={handleSubmit}
@@ -90,7 +87,8 @@ export const ArticleParamsForm = ({ onStateUpdate }: TArticleParamsForm) => {
 						onChange={(option) => handleChange('fontColor', option)}
 					/>
 
-					<div className={styles.divider}></div> {/* Элемент с линией */}
+					{/* <div className={styles.divider}/> Элемент с линией  <= я сделяль */}
+					 <Separator /> {/* оказывается был элемент. я про него забыл  */}
 
 					<Select
 						options={backgroundColors}

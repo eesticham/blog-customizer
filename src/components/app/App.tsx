@@ -10,10 +10,6 @@ import styles from './App.module.scss';
 export const App = () => {
   const [pageState, setPageState] = useState(defaultArticleState);
 
-  const handlePageStateUpdate = (newState: ArticleStateType) => {
-    setPageState(newState);
-  };
-
   return (
     <div
       className={styles.main}
@@ -26,7 +22,7 @@ export const App = () => {
           '--bg-color': pageState.backgroundColor.value,
         } as CSSProperties
       }>
-      <ArticleParamsForm onStateUpdate={handlePageStateUpdate} />
+      <ArticleParamsForm onStateUpdate={setPageState} />
       <Article />
     </div>
   );
