@@ -16,14 +16,11 @@
 	display: flex;
 	flex-shrink: 0;
 	flex-direction: column;
+	gap: 50px; // adjust the space between menus
 	box-sizing: border-box;
 	width: 616px;
 	height: auto;
 	min-height: 100%;
-
-	> * + * {
-		margin-top: 45px; // adjust the space between menus
-	}
 	padding: 50px 31px;
 	background-color: #ffffff;
 	border-right: 1px solid #000000;
@@ -34,3 +31,8 @@
 	justify-content: space-between;
 	margin-top: auto;
 }
+
+.divider {
+	border-bottom: 1px solid #d7d7d7;
+	margin: 10px 0; // Отступы по желанию для визуального разделения
+  }

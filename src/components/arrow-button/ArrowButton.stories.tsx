@@ -1,28 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
+// import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArrowButton, ArrowButtonProps } from './ArrowButton';
+// import { ArrowButton } from './ArrowButton';
 
-const meta: Meta<typeof ArrowButton> = {
-	component: ArrowButton,
-};
+// const meta: Meta<typeof ArrowButton> = {
+// 	component: ArrowButton,
+// };
 
-export default meta;
+// export default meta;
+// type Story = StoryObj<typeof ArrowButton>;
 
-export const ArrowButtonStory: StoryObj<ArrowButtonProps> = {
-	render: (args) => {
-		const [isOpened, setIsOpened] = useState(false);
-
-		const toggleSidebar = () => {
-			setIsOpened(!isOpened);
-		};
-
-		return (
-			<ArrowButton {...args} isOpened={isOpened} handleClick={toggleSidebar} />
-		);
-	},
-	args: {
-		isOpened: false,
-		handleClick: () => {},
-	},
-};
+// export const ArrowButtonStory: Story = {
+// 	render: () => {
+// 		return (
+// 			<>
+// 				<ArrowButton isOpened={true} onClick={() => {}} /> - ваше предложение не работает, я просто закомментил код чтоб не мешал
+// 			</>
+// 		);
+// 	},
+// };
