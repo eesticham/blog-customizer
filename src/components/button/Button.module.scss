@@ -8,12 +8,43 @@
 	text-align: center;
 	border: 1px solid #000000;
 	cursor: pointer;
+
+	&-reset {
+        background-color: white;
+
+        &:hover,
+        &:active {
+            background-color: black; 
+            color: white; // This sets the text color
+		}
+	}
 }
 
-.button:active {
-	background: var(--gold, #ffc802);
+// .button:active {
+// 	background: var(--gold, #ffc802);
+// }
+
+// .button:hover {
+// 	background: var(--gold, #ffedab);
+// }
+
+/* Reset button styles */
+.button-reset {
+    background-color: white;
 }
 
-.button:hover {
-	background: var(--gold, #ffc802);
+.button-reset:hover,
+.button-reset:active {
+    background-color: black; 
+    color: white !important;
+}
+
+/* Submit button styles */
+.button-submit {
+    background-color: #ffc802;
+}
+
+.button-submit:hover,
+.button-submit:active {
+    background-color: #ffedab;
 }

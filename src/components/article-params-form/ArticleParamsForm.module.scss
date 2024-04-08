@@ -16,6 +16,7 @@
 	display: flex;
 	flex-shrink: 0;
 	flex-direction: column;
+	gap: 50px; // adjust the space between menus
 	box-sizing: border-box;
 	width: 616px;
 	height: auto;
@@ -30,3 +31,8 @@
 	justify-content: space-between;
 	margin-top: auto;
 }
+
+.divider {
+	border-bottom: 1px solid #d7d7d7;
+	margin: 10px 0; // Отступы по желанию для визуального разделения
+  }
