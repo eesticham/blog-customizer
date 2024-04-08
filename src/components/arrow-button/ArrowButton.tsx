@@ -13,7 +13,7 @@ export const ArrowButton = ({ isOpened, handleClick }: ArrowButtonProps) => {
 			role='button'
 			aria-label='Открыть/Закрыть форму параметров статьи'
 			tabIndex={0}
-			className={clsx(styles.container, styles.container_open && isOpened )}
+			className={clsx(styles.container, isOpened && styles.container_open)}
 			onClick={handleClick}>
 			<img
 				src={arrow}
